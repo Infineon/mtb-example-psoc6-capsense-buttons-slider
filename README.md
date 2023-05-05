@@ -4,7 +4,7 @@ This code example features a 5-segment CAPSENSE&trade; slider and two CAPSENSE&t
 
 [View this README on GitHub.](https://github.com/Infineon/mtb-example-psoc6-capsense-buttons-slider)
 
-[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMjcwMDQiLCJTcGVjIE51bWJlciI6IjAwMi0yNzAwNCIsIkRvYyBUaXRsZSI6IlBTb0MmdHJhZGU7IDYgTUNVOiBDQVBTRU5TRSZ0cmFkZTsgYnV0dG9ucyBhbmQgc2xpZGVyIiwicmlkIjoic2RhayIsIkRvYyB2ZXJzaW9uIjoiNC4xLjAiLCJEb2MgTGFuZ3VhZ2UiOiJFbmdsaXNoIiwiRG9jIERpdmlzaW9uIjoiTUNEIiwiRG9jIEJVIjoiSUNXIiwiRG9jIEZhbWlseSI6IlBTT0MifQ==)
+[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMjcwMDQiLCJTcGVjIE51bWJlciI6IjAwMi0yNzAwNCIsIkRvYyBUaXRsZSI6IlBTb0MmdHJhZGU7IDYgTUNVOiBDQVBTRU5TRSZ0cmFkZTsgYnV0dG9ucyBhbmQgc2xpZGVyIiwicmlkIjoic2RhayIsIkRvYyB2ZXJzaW9uIjoiNC4yLjAiLCJEb2MgTGFuZ3VhZ2UiOiJFbmdsaXNoIiwiRG9jIERpdmlzaW9uIjoiTUNEIiwiRG9jIEJVIjoiSUNXIiwiRG9jIEZhbWlseSI6IlBTT0MifQ==)
 
 
 ## Requirements
@@ -28,6 +28,7 @@ This code example features a 5-segment CAPSENSE&trade; slider and two CAPSENSE&t
 - [PSoC&trade; 62S1 Wi-Fi Bluetooth&reg; pioneer kit](https://www.infineon.com/CYW9P62S1-43438EVB-01) (`CYW9P62S1-43438EVB-01`)
 - [PSoC&trade; 62S1 Wi-Fi Bluetooth&reg; pioneer kit](https://www.infineon.com/CYW9P62S1-43012EVB-01) (`CYW9P62S1-43012EVB-01`)
 - [PSoC&trade; 62S3 Wi-Fi Bluetooth&reg; prototyping kit](https://www.infineon.com/CY8CPROTO-062S3-4343W) (`CY8CPROTO-062S3-4343W`)
+- [PSoC&trade; 62S2 Wi-Fi Bluetooth&reg; prototyping kit](https://www.infineon.com/CY8CPROTO-062S2-43439) (`CY8CPROTO-062S2-43439`)
 - [PSoC&trade; 64 "Secure Boot" Wi-Fi Bluetooth&reg; pioneer kit](https://www.infineon.com/CY8CKIT-064B0S2-4343W) (`CY8CKIT-064B0S2-4343W`)
 - [PSoC&trade; 62S4 pioneer kit](https://www.infineon.com/CY8CKIT-062S4) (`CY8CKIT-062S4`)
 - [PSoC&trade; 62S2 evaluation kit](https://www.infineon.com/CY8CEVAL-062S2) (`CY8CEVAL-062S2`, `CY8CEVAL-062S2-LAI-4373M2`, `CY8CEVAL-062S2-LAI-43439M2`, `CY8CEVAL-062S2-MUR-43439M2`)
@@ -183,7 +184,7 @@ If using a PSoC&trade; 64 "Secure" MCU kit (like CY8CKIT-064B0S2-4343W), the PSo
       ```
    </details>
 
-4. After programming, the application starts automatically. Confirm that "\<CE Title>" is displayed on the UART terminal. Confirm that the user LED is glowing.
+4. After programming, the application starts automatically. Confirm that "PSoC 6 MCU: CAPSENSE buttons and slider" is displayed on the UART terminal. Confirm that the user LED is glowing.
 
 5. To test the application, touch CAPSENSE&trade; button 1 (BTN1) to turn the LED OFF, touch CAPSENSE&trade; Button 0 (BTN0) to turn the LED ON, and touch the slider in different positions to change the brightness.
 
@@ -258,6 +259,7 @@ The application is configured to work with the default operating voltage of the 
  CY8CEVAL-062S2-LAI-4373M2  | 3.3V / 1.8V           | 3.3V                     
  CY8CEVAL-062S2-LAI-43439M2 | 3.3V / 1.8V           | 3.3V                     
  CY8CEVAL-062S2-MUR-43439M2 | 3.3V / 1.8V           | 3.3V                     
+ CY8CPROTO-062S2-43439 | 3.3V / 1.8V                | 3.3V                     
 
 For kits that support multiple operating voltages, the default BSP configuration is provided by the *design.modus* file should be customized. Follow the instructions to use the example at a custom power supply, such as 1.8 V:
 
@@ -293,6 +295,7 @@ For kits that support multiple operating voltages, the default BSP configuration
     CY8CEVAL-062S2-LAI-4373M2  | J18 (1-2)         
     CY8CEVAL-062S2-LAI-43439M2 | J18 (1-2)         
     CY8CEVAL-062S2-MUR-43439M2 | J18 (1-2)         
+    CY8CPROTO-062S2-43439 | J3 (1-2)               
    
 
 7. Re-build and program the application to evaluate the application at the new power setting.
@@ -303,9 +306,10 @@ For kits that support multiple operating voltages, the default BSP configuration
 
  Resource  |  Alias/object     |    Purpose 
  :------- | :------------    | :------------ 
- GPIO (HAL)    | CYBSP_USER_LED         |  User LED to show visual output                     
- PWM (HAL)     | pwm_led                |  PWM HAL object used to vary LED brightness         
- EZI2C (HAL)   | sEzI2C                 |  Slave EZI2C object used to tune Capsense           
+ GPIO (HAL)    | CYBSP_USER_LED          |  User LED to show visual output                     
+ PWM (HAL)     | pwm_led                 |  PWM HAL object used to vary LED brightness         
+ EZI2C (HAL)   | sEzI2C                  |  Slave EZI2C object used to tune Capsense 
+ UART (HAL)    | cy_retarget_io_uart_obj | UART HAL object used by retarget-io for Debug UART           
 <br>
 
 ## Related resources
@@ -342,9 +346,10 @@ Document title: *CE227004* - *PSoC&trade; 6 MCU: CAPSENSE&trade; buttons and sli
 | 3.0.0   | Updated to BSP v3.X and added support for new kits
 | 4.0.0   | Major update to support ModusToolbox&trade; v3.0 and BSPs v4.X.<br> This version is not backward compatible with previous versions of ModusToolbox&trade;
 | 4.1.0   | Added Support for CY8CEVAL-062S2-LAI-43439M2
+| 4.2.0   | Added Support for CY8CPROTO-062S2-43439 |
 ------
 
-<br>
+<br >
 
 ---------------------------------------------------------
 

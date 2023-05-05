@@ -51,6 +51,7 @@
 #include "cycfg.h"
 #include "cycfg_capsense.h"
 #include "led.h"
+#include "cy_retarget_io.h"
 
 /*******************************************************************************
 * Macros
@@ -136,6 +137,22 @@ int main(void)
 
     /* Enable global interrupts */
     __enable_irq();
+    
+    /* Initialize retarget-io to use the debug UART port */
+    result = cy_retarget_io_init(CYBSP_DEBUG_UART_TX, CYBSP_DEBUG_UART_RX,
+                                 CY_RETARGET_IO_BAUDRATE);
+    /* retarget-io init failed. Stop program execution */
+    if (result != CY_RSLT_SUCCESS)
+    {
+        CY_ASSERT(0);
+    }
+    /* \x1b[2J\x1b[;H - ANSI ESC sequence for clear screen */
+    printf("\x1b[2J\x1b[;H");
+
+    printf("**********************************************************\r\n");
+    printf("PSoC 6 MCU: CAPSENSE buttons and slider\r\n");
+    printf("**********************************************************\r\n");
+
 
     initialize_led();
     initialize_capsense_tuner();
