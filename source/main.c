@@ -53,6 +53,7 @@
 #include "led.h"
 #include "cy_retarget_io.h"
 
+
 /*******************************************************************************
 * Macros
 *******************************************************************************/
@@ -70,6 +71,7 @@ static void capsense_isr(void);
 static void capsense_callback();
 void handle_error(void);
 
+
 /*******************************************************************************
 * Global Variables
 *******************************************************************************/
@@ -78,6 +80,7 @@ cyhal_ezi2c_t sEzI2C;
 cyhal_ezi2c_slave_cfg_t sEzI2C_sub_cfg;
 cyhal_ezi2c_cfg_t sEzI2C_cfg;
 volatile bool capsense_scan_complete = false;
+
 
 /*******************************************************************************
 * Function Name: handle_error
@@ -99,6 +102,7 @@ void handle_error(void)
 
     CY_ASSERT(0);
 }
+
 
 /*******************************************************************************
 * Function Name: main
@@ -192,6 +196,7 @@ int main(void)
     
 }
 
+
 /*******************************************************************************
 * Function Name: process_touch
 ********************************************************************************
@@ -269,6 +274,7 @@ static void process_touch(void)
     slider_pos_prev = slider_pos;
 }
 
+
 /*******************************************************************************
 * Function Name: initialize_capsense
 ********************************************************************************
@@ -318,6 +324,7 @@ static uint32_t initialize_capsense(void)
     return status;
 }
 
+
 /*******************************************************************************
 * Function Name: capsense_isr
 ********************************************************************************
@@ -329,6 +336,7 @@ static void capsense_isr(void)
 {
     Cy_CapSense_InterruptHandler(CYBSP_CSD_HW, &cy_capsense_context);
 }
+
 
 /*******************************************************************************
 * Function Name: capsense_callback()
@@ -376,5 +384,6 @@ static void initialize_capsense_tuner(void)
     }
 
 }
+
 
 /* [] END OF FILE */
