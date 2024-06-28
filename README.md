@@ -4,7 +4,7 @@ This code example features a 5-segment CAPSENSE&trade; slider and two CAPSENSE&t
 
 [View this README on GitHub.](https://github.com/Infineon/mtb-example-psoc6-capsense-buttons-slider)
 
-[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMjcwMDQiLCJTcGVjIE51bWJlciI6IjAwMi0yNzAwNCIsIkRvYyBUaXRsZSI6IlBTb0MmdHJhZGU7IDYgTUNVOiBDQVBTRU5TRSZ0cmFkZTsgYnV0dG9ucyBhbmQgc2xpZGVyIiwicmlkIjoic2RhayIsIkRvYyB2ZXJzaW9uIjoiNC40LjAiLCJEb2MgTGFuZ3VhZ2UiOiJFbmdsaXNoIiwiRG9jIERpdmlzaW9uIjoiTUNEIiwiRG9jIEJVIjoiSUNXIiwiRG9jIEZhbWlseSI6IlBTT0MifQ==)
+[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMjcwMDQiLCJTcGVjIE51bWJlciI6IjAwMi0yNzAwNCIsIkRvYyBUaXRsZSI6IlBTb0MmdHJhZGU7IDYgTUNVOiBDQVBTRU5TRSZ0cmFkZTsgYnV0dG9ucyBhbmQgc2xpZGVyIiwicmlkIjoic2RhayIsIkRvYyB2ZXJzaW9uIjoiNC41LjAiLCJEb2MgTGFuZ3VhZ2UiOiJFbmdsaXNoIiwiRG9jIERpdmlzaW9uIjoiTUNEIiwiRG9jIEJVIjoiSUNXIiwiRG9jIEZhbWlseSI6IlBTT0MifQ==)
 
 
 ## Requirements
@@ -355,7 +355,8 @@ Document title: *CE227004* - *PSoC&trade; 6 MCU: CAPSENSE&trade; buttons and sli
 | 4.1.0   | Added Support for CY8CEVAL-062S2-LAI-43439M2
 | 4.2.0   | Added Support for CY8CPROTO-062S2-43439 |
 | 4.3.0   | Updated to support ModusToolbox&trade; v3.1 and CAPSENSE&trade; middleware v4.X, added support for CY8CEVAL-062S2-MUR-4373EM2, CY8CEVAL-062S2-MUR-4373M2 |
-| 4.4.0   | Added support for CY8CEVAL-062S2-CYW43022CUB
+| 4.4.0   | Added support for CY8CEVAL-062S2-CYW43022CUB |
+| 4.5.0   | Resolved an error due to conflicting prototype for ARM compiler
 
 ------
 

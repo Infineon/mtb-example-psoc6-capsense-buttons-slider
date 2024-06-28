@@ -11,7 +11,7 @@
 *
 *
 *******************************************************************************
-* Copyright 2019-2023, Cypress Semiconductor Corporation (an Infineon company) or
+* Copyright 2019-2024, Cypress Semiconductor Corporation (an Infineon company) or
 * an affiliate of Cypress Semiconductor Corporation.  All rights reserved.
 *
 * This software, including source code, documentation and related
@@ -68,7 +68,7 @@ static uint32_t initialize_capsense(void);
 static void process_touch(void);
 static void initialize_capsense_tuner(void);
 static void capsense_isr(void);
-static void capsense_callback();
+static void capsense_callback(cy_stc_active_scan_sns_t *ptrActiveScan);
 void handle_error(void);
 
 
